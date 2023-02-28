@@ -155,8 +155,7 @@ class _SuggestionsTextFieldState extends State<SuggestionsTextField> {
       widget.tagsTextField.onChanged!(str);
     
     if (_suggestions != null) {
-      _matches =
-          _suggestions!.where((String sgt) => sgt.startsWith(str)).toList();
+      _matches = _suggestions!;
 
       if (str.isEmpty) _matches = [];
 
