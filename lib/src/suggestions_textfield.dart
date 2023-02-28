@@ -151,6 +151,9 @@ class _SuggestionsTextFieldState extends State<SuggestionsTextField> {
 
   ///Check onChanged
   void _checkOnChanged(String str) {
+    if (widget.tagsTextField.onChanged != null)
+      widget.tagsTextField.onChanged!(str);
+    
     if (_suggestions != null) {
       _matches =
           _suggestions!.where((String sgt) => sgt.startsWith(str)).toList();
@@ -168,8 +171,6 @@ class _SuggestionsTextFieldState extends State<SuggestionsTextField> {
       });
     }
 
-    if (widget.tagsTextField.onChanged != null)
-      widget.tagsTextField.onChanged!(str);
   }
 }
 
